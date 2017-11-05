@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dwarven Relationship Viewer</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <input id="xmlDumpUploader" type="file" /><br /><br />
+
+  <form id="fortsearch" submit="searchForFort();">
+  Fortress Name: <input placeholder="enter fort name" name="fortname" id="fortname" type="text"/>
+  <input type="submit" value="Search" disabled>
+  </form>
+
+  <div id="dorfs">
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/helper.js"></script>
+  <script src="js/entitysearcher.js"></script>
+  <script src="js/xmlreader.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
