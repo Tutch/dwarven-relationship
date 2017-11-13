@@ -66,7 +66,6 @@ EntitySearcher.prototype.searchForSettler = function(siteid) {
         };
 
         for(j=0; j<hEvents[i].childNodes.length; j++) {
-
           var eventChildren = hEvents[i].childNodes[j];
 
           if(eventChildren.nodeName == 'hfid') {
@@ -103,7 +102,8 @@ EntitySearcher.prototype.getHistoricalFigureById = function(hfids) {
         birth:'',
         death:'',
         type:'',
-        relationships: []
+        relationships: [],
+        hflinks: []
       };
 
       for(j=0; j<hFigures[i].childNodes.length; j++) {
@@ -125,7 +125,6 @@ EntitySearcher.prototype.getHistoricalFigureById = function(hfids) {
           historical_figure.type = figuresChildren.childNodes[0].nodeValue;
         }else if(figuresChildren.nodeName == 'relationship_profile_hf') {
           var relationshipChildren = figuresChildren.childNodes;
-
           var relationship = {
             hfid:'',
             rep_friendly:-1,
@@ -146,6 +145,22 @@ EntitySearcher.prototype.getHistoricalFigureById = function(hfids) {
           }
 
           historical_figure.relationships.push(relationship);
+        }else if(figuresChildren.nodeName == 'hf_link') {
+          var hflinkChildren = figuresChildren.childNodes;
+
+          var hflink = {
+            hfid:'',
+            link_type:''
+          }
+
+          for(h=0; h<hflinkChildren.length; h++) {
+            if(hflinkChildren[h].nodeName == 'hfid') {
+              hflink.hfid = hflinkChildren[h].childNodes[0].nodeValue;
+            }else if(hflinkChildren[h].nodeName == 'link_type') {
+              hflink.link_type = hflinkChildren[h].childNodes[0].nodeValue;
+            }
+          }
+          historical_figure.hflinks.push(hflink);
         }
       }
 

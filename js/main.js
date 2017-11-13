@@ -18,7 +18,20 @@ searchForm.addEventListener('submit', function(e) {
   var ids = entitySearcher.searchForSettler(foundSite.id);
   var entities = entitySearcher.getHistoricalFigureById(ids);
 
-  showDwarves(entities);
+  var dwarvenNameId = [];
+
+  //id and name are necessary in order to build the graph
+  for(i=0; i<ids.length; i++) {
+    next:
+    for(j=0; j<entities.length; j++) {
+      if(ids[i] == entities[j].id) {
+        dwarvenNameId.push({id:ids[i], name:entities[j].name});
+        break next;
+      }
+    }
+  }
+
+  RelationshipGraph('relationship', entities, ids, dwarvenNameId);
 }, true);
 
 // Legends XML upload
@@ -26,5 +39,6 @@ fileChooser.addEventListener('change', function(e) {
     xmlReader.handleFileSelection(function(xml) {
         entitySearcher.legendsXML = xml;
         searchForm.getElementsByTagName('input')[1].disabled = false;
+        searchForm.getElementsByTagName('input')[0].disabled  = false;
     });
 }, false);

@@ -6,23 +6,35 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/vis.min.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
-  <input id="xmlDumpUploader" type="file" /><br /><br />
+  <div id="loading">
+    <div>
+      <h1>Loading Graph</h1><h3>This might take several seconds depending on the number of entities. Sorry :(</h3>
+    </div>
+  </div>
+  <div id="main">
+    <input id="xmlDumpUploader" type="file" /><br /><br />
 
-  <form id="fortsearch" submit="searchForFort();">
-  Fortress Name: <input placeholder="enter fort name" name="fortname" id="fortname" type="text"/>
-  <input type="submit" value="Search" disabled>
-  </form>
+    <form id="fortsearch" submit="searchForFort();">
+    Fortress Name: <input placeholder="enter fort name" name="fortname" id="fortname" type="text" disabled/>
+    <input type="submit" value="Search" disabled>
+    </form>
 
-  <div id="dorfs">
+    <div id="relationship"></div>
+
+    <div id="dorfs">
+    </div>
   </div>
 
   <!-- SCRIPTS -->
   <script src="js/helper.js"></script>
+  <script src="js/vis.min.js"></script>
+  <script src="js/graph.js"></script>
   <script src="js/entitysearcher.js"></script>
   <script src="js/xmlreader.js"></script>
   <script src="js/main.js"></script>
