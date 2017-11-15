@@ -9,13 +9,20 @@ body, html {
   margin-top: 2%;
 }
 
-#dorfs {
-  margin-top: 50px;
+#graphHeader {
+  display: none;
+  padding-bottom: 1%;
 }
 
-#dorfs p {
-  text-transform: capitalize;
-  margin: 0;
+#graphHeader select {
+  display: none;
+  min-width: 200px;
+  margin-top: 0;
+}
+
+#graphHeader h3 {
+  display: none;
+  margin-bottom: 1%;
 }
 
 #relationship {
@@ -42,4 +49,67 @@ body, html {
   text-align: center;
   padding-top: 15%;
   width: 60%;
+}
+
+#legend {
+  display: none;
+  background-color: rgba(255,255,255,0.9);
+  padding: 1em 0em 1em 2em;
+  position: absolute;
+  width: 240px;
+  z-index: 10;
+  right: 6%;
+  margin-top: 2%;
+}
+
+dt hr{
+  border: 0;
+  border-bottom: 3px solid;
+}
+
+.buddy {
+  border-color: #63c54f;
+}
+
+.friendly {
+  border-color: #63c54f;
+  border-style: dashed;
+}
+
+.acquaintance {
+  border-color: #a4b0a2;
+  border-style: dotted;
+}
+
+.family {
+  border-color: #e0a847;
+}
+
+.marriage {
+  border-color: #f7ed46;
+}
+
+dt {
+  width: 28px;
+  height: 15px;
+  float: left;
+  clear: left;
+  margin-bottom: 10px;
+}
+
+dt, dd
+{
+   display: inline-block;
+   height: 15px;
+}
+
+dd {
+  margin: 0;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  width: 70%;
+}
+
+div.vis-network {
+  background-color: #f7f7f7;
 }

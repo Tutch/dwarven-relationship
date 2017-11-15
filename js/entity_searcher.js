@@ -164,7 +164,7 @@ EntitySearcher.prototype.getHistoricalFigureById = function(hfids) {
         }
       }
 
-      if(hfids.includes(historical_figure.id)) {
+      if(hfids.includes(historical_figure.id) && historical_figure.death == "-1") {
         figList.push(historical_figure);
       }
     }

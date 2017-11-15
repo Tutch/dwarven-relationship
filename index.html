@@ -21,22 +21,33 @@
     <input id="xmlDumpUploader" type="file" /><br /><br />
 
     <form id="fortsearch" submit="searchForFort();">
-    Fortress Name: <input placeholder="enter fort name" name="fortname" id="fortname" type="text" disabled/>
+    Fortress Name: <input placeholder="enter fort name"
+                      name="fortname" id="fortname" type="text" disabled/>
     <input type="submit" value="Search" disabled>
     </form>
 
-    <div id="relationship"></div>
-
-    <div id="dorfs">
+    <div id="graphHeader">
+      <h3>Entities</h3>
+      <select id="siteEntities"></select>
     </div>
+    <dl id="legend">
+      <dt><hr class="buddy"/></dt><dd>Friends</dd>
+      <dt><hr class="friendly"/></dt><dd>Friendly Terms</dd>
+      <dt><hr class="acquaintance"/></dt><dd>Passing Acquaintance</dd>
+      <dt><hr class="family"/></dt><dd>Family</dd>
+      <dt><hr class="marriage"/></dt><dd>Marriage</dd>
+    </dl>
+    <div id="relationship"></div>
+    <div id="dorfs"></div>
   </div>
 
   <!-- SCRIPTS -->
+  <script src="js/formatter.js"></script>
   <script src="js/helper.js"></script>
   <script src="js/vis.min.js"></script>
-  <script src="js/graph.js"></script>
-  <script src="js/entitysearcher.js"></script>
-  <script src="js/xmlreader.js"></script>
+  <script src="js/relationship_graph.js"></script>
+  <script src="js/entity_searcher.js"></script>
+  <script src="js/xml_reader.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
